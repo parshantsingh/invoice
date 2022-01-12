@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Hello, world!</title>
+<style>
+    table{
+      border:1px solid black;
+    }
+</style>
+  </head>
+  <body>
+  <div id="pt">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="49%">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td
+                                        style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:15px;">
+                                        Invoice Receipt</td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;">
+                                        Invoice Number: {{data.id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:15px;">
+                                        Service Provider </td>
+                                </tr>
+                                {% for s in seller %}
+                                <tr>
+
+                                    <td
+                                        style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:14px;">
+                                        <b>seller </b> {{s.name}}</td>
+                                </tr>
+
+                                <td style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:14px;">
+                                    <b>address </b> {{s.address}}<br>
+                                    <b>contact </b> {{s.phone}}
+                                    </td>
+                                {% endfor %}
+
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </td>
+    <td width="51%" valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td align="right"><img src="logo.png" alt="" width="150" /></td>
+            </tr>
+            <tr>
+                <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;" align="right">
+                </td>
+            </tr>
+            <tr>
+                <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;" align="right">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;" align="right">
+                    Order Date :{{data.order_date}}</td>
+            </tr>
+            <tr>
+                <td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:15px;" align="right">
+                    Customer Name</td>
+            </tr>
+            <tr>
+                <td style="font-family:Verdana, Geneva, sans-serif; padding:8px; font-weight:300; font-size:13px;" align="right">
+                    {{data.bname}}</td>
+            </tr>
+            <tr>
+                <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; padding:8px font-size:13px;" align="right">
+                    {{data.baddress}}<br>
+                    {{data.bphone}}
+                </td>
+            </tr>
+
+        </table>
+    </td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px; border-top:1px solid #333; border-bottom:1px solid #333; border-left:1px solid #333; border-right:1px solid #333;"
+                        width="34%" height="32" align="center">Description</td>
+                    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px; border-top:1px solid #333; border-bottom:1px solid #333; border-right:1px solid #333;"
+                        width="30%" align="center">Bill Amount</td>
+                    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px; border-top:1px solid #333; border-bottom:1px solid #333; border-right:1px solid #333;"
+                        width="30%" align="center">Payment Method</td>
+                </tr>
+                <tr>
+                    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-left:1px solid #333; border-right:1px solid #333;"
+                        height="32" align="center">{{data.pdis}}</td>
+                    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+                        align="center">{{data.pprice}}</td>
+                    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+                        align="center">{{data.pay_method}}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px;" colspan="2">Please Note:
+        </td>
+    </tr>
+    <tr>
+        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;" colspan="2">Dear Consumer,
+            the bill payment will reflect in next 48 hours in your account. Please contact our customer support for any
+            queries regarding this order.</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px;" colspan="2">Thank you for
+            using our service</td>
+    </tr>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;" colspan="2"
+            align="center">(This is computer generated receipt and does not require physical signature.) </td>
+        <button onclick="myfun('pt')" class="btn btn-primary">Get Bill</button>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+    function myfun(pa){
+    var bk = document.body.innerHTML;
+    var dv = document.getElementById(pa).innerHTML;
+        document.body.innerHTML = dv;
+        window.print();
+    }
+
+</script>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
