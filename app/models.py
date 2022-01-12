@@ -1,17 +1,18 @@
 from django.db import models
+import datetime
 
 # Create your models here.
 class seller(models.Model):
-    name = models.CharField(max_length=50,default="inayat")
-    address = models.CharField(max_length=150,default="delhi")
-    phone = models.IntegerField(default='8171415434')
-    date = models.DateField(auto_now_add=True)
+    name = models.CharField(max_length=50,default="Vikas Sharma")
+    address = models.CharField(max_length=150,default="IFCO Chowk, Delhi")
+    phone = models.IntegerField(default='+91 8171415434')
+    date = models.DateField(default=datetime.datetime.today)
 
 class buyer(models.Model):
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=150)
     phone = models.IntegerField()
-    date = models.DateField(auto_now_add=True)
+    date = models.DateField(default=datetime.datetime.today)
 
 class producat(models.Model):
     img = models.ImageField(upload_to='media/')
