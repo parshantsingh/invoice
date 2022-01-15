@@ -12,7 +12,7 @@ class buyer(models.Model):
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=150)
     phone = models.IntegerField()
-    date = models.DateField(default=datetime.datetime.today)
+    purchase_date = models.DateField(default=datetime.datetime.today)
 
 class producat(models.Model):
     img = models.ImageField(upload_to='media/')

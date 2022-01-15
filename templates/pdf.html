@@ -2,88 +2,79 @@
 
 {% block content %}
   <div id="pt">
-      <div class="container">
-        <tr>
-            <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-            <td width="49%">
+      <div class="container mt-5">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td>
-
-                            
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                
-                                <tr>
-                                    <td
-                                        style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;">
-                                        Invoice Number: {{data.id}}</td>
-                                </tr>
-                                <tr>
-                                    <td
-                                        style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:15px;">
-                                        Invoice Date: {{data.bdatetime}}</td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td
-                                        style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:15px;" colspan="2">
-                                        Service Provider </td>
-                                </tr>
-                                {% for s in seller %}
-                                <tr>
-                                    <td
-                                        style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:14px;">
-                                        <b>Seller Name</b> </td>
-                                        <td>{{s.name}}</td>
-                                </tr>
-
-                                <tr>
-                                    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:14px;">
-                                        <b>Seller Address </b> </td>
-                                    <td>{{s.address}}</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Seller Phone</b></td>
-                                    <td>{{s.phone}}</td>
-                                </tr>    
-                                {% endfor %}
-
+                        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;">
+                            Invoice Number: {{data.id}}
+                        </td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td>
+                        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:15px;">
+                                Invoice Date: {{data.porder_date}}
+                        </td>
                     </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-    </td>
-    <td width="51%" valign="top">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:15px;" colspan="4">
+                            Seller 
+                        </td>
+                    </tr>
+                    {% for s in seller %}
+                    <tr>
+                        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:14px;">
+                            <b>Name</b> 
+                        </td>
+                        <td>
+                            {{s.name}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:14px;">
+                            <b>Address </b> 
+                        </td>
+                        <td>
+                            {{s.address}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Phone</b>
+                        </td>
+                        <td>
+                            {{s.phone}}
+                        </td>
+                    </tr>    
+                    {% endfor %}
+                <tr>
+                    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:15px;" colspan="2">
+                        Buyer
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:14px;">
+                        <b>Name</b> 
+                    </td>
+                    <td>
+                        {{data.bname}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:14px;">
+                        <b>Address </b> 
+                    </td>
+                    <td>
+                        {{data.baddress}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Phone</b>
+                    </td>
+                    <td>
+                        {{data.bphone}}
+                    </td>
+                </tr>   
 
-            <tr>
-                <td style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:14px;"><b>Buyer Name</b> </td>
-                <td>{{data.bname}}</td>
-            </tr>
-            <tr>
-                <td style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:14px;"><b>Buyer Address </b> </td>
-                <td>{{data.baddress}}</td>
-            </tr>
-            <tr>
-                <td><b>Buyer Phone</b></td>
-                <td>{{data.bphone}}</td>
-            </tr>   
-        </table>
-    </td>
-    </tr>
-    <tr>
-        <td colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-        <td colspan="2">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px; border-top:1px solid #333; border-bottom:1px solid #333; border-left:1px solid #333; border-right:1px solid #333;"
