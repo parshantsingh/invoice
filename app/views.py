@@ -25,7 +25,7 @@ def buy(request,pk):
         dis = pro.dis
         price = amount
         pro_quantity =quantity
-        pro_total = amount*quantity
+        pro_total = amount*quantity         
         slr = seller.objects.all()
         data = {'pname':pn,'pprice':price,'bname':name,'baddress':address,'bphone':phone,'pdis':dis,'pquantity':pro_quantity, 'ptotal':pro_total}
         return render(request, 'pdf.html', {'data': data, 'seller': slr})
